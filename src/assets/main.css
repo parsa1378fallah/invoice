@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: vazir;
+    src: url(./fonts//vazir/Vazir-Medium.ttf);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
