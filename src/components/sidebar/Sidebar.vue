@@ -177,6 +177,7 @@ router.afterEach((to) => {
     });
   } else {
     invoiceRoute.value = false;
+    setInvoiceDataAsDefult();
   }
 });
 const addNewInvoice = () => {
@@ -249,6 +250,41 @@ const invoiceData = ref({
   },
   status: "",
 });
+
+const setInvoiceDataAsDefult = ()=>{
+  invoiceData.value = {
+  billFrom: {
+    address: "",
+    country: "",
+    city: "",
+    postalCode: "",
+  },
+  billTo: {
+    clientName: "",
+    email: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    country: "",
+    invoiceDate: "",
+    paymentTerms: "",
+    get paymentDue() {
+      const paymentDueDate = new Date(this.invoiceDate);
+      const paymentTerms = this.paymentTerms;
+      if (paymentTerms === 0) {
+        paymentDueDate.setMonth(paymentDueDate.getMonth() + 1);
+        return paymentDueDate.toISOString().split("T")[0];
+      } else if (paymentTerms === 1) {
+        paymentDueDate.setMonth(paymentDueDate.getMonth() + 2);
+        return paymentDueDate.toISOString().split("T")[0];
+      }
+    },
+    itemLists: [],
+    describeProduct: "",
+  },
+  status: "",
+};
+}
 </script>
 
 <style>
