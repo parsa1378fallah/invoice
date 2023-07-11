@@ -9,7 +9,6 @@
       @input="updateValue()"
       
     />
-    <!-- {{modelValue}} -->
   </div>
 </template>
 
@@ -20,7 +19,7 @@ const props = defineProps({
   title: String,
   disabled: Boolean,
   modelValue : {
-    type  : String,
+    type  : [String , Number],
     required :  false
   }
 });
@@ -29,7 +28,6 @@ const updateValue = ()=>{
   emits('update:modelValue', inputValue.value);
 }
 const { modelValue } = toRefs(props);
-console.log(modelValue.value)
 const inputValue = ref(modelValue.value) ;
 
 

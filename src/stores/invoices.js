@@ -47,5 +47,9 @@ export const useInvoicesStore = defineStore("invoices", () => {
     value.value.splice(value.value.indexOf(el => el.id === id), 1 , item)
     router.push('/invoice')
   }
-  return { value, addInvoice ,deleteCurrentInvoice,editInvoice };
+
+function setStatus(id , status){
+  value.value[value.value.indexOf(el => el.id === id)].status = status;
+}
+  return { value, addInvoice ,deleteCurrentInvoice,editInvoice , setStatus };
 });

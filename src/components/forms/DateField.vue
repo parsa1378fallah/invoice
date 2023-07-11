@@ -5,6 +5,7 @@
       class="border-0 outline-0 bg-white rounded px-2 py-1 w-full text-xs"
       type="date"
       v-model="inputValue"
+     
     />
   </div>
 </template>
