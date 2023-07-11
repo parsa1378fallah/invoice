@@ -113,13 +113,14 @@ import { ref, watch } from "vue";
 import Cover from "../components/cover/Cover.vue";
 import Button from "../components/button/Button.vue";
 import TextField from "../components/forms/TextField.vue";
+import { useInvoicesStore } from "../stores/invoices.js";
+import { useDrawerStore } from "../stores/drawer.js";
+
 const route = useRoute();
 const router = useRouter();
-import { useInvoicesStore } from "../stores/invoices.js";
 const invoices = useInvoicesStore();
-
-import { useDrawerStore } from "../stores/drawer.js";
 const drawer = useDrawerStore();
+
 let currentClient = ref(
   invoices.value.filter((el) => el.id == route.params.id)
 );
@@ -128,7 +129,6 @@ const deleteCurrentInvoice = () => {
   router.push("/");
 };
 watch(invoices, (newValue, oldValue) => {
-  console.log(newValue.value);
   currentClient = invoices.value.filter((el) => el.id == route.params.id);
 });
 </script>
