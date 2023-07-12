@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 import Sidebar from "./components/sidebar/Sidebar.vue"
 </script>
 <template>
-<div>
+<div class="px-6">
   <sidebar></sidebar>
   <RouterView />
 </div> 

@@ -1,7 +1,7 @@
 <template>
   <div class="container h-screen flex justify-center">
     <div class="w-[45rem] flex flex-col p-10">
-      <div class="flex flex-row justify-between items-center mb-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
         <div class="flex flex-col">
           <h1 class="text-2xl text-white">صورت حساب ها</h1>
           <p class="text-xs text-white">
@@ -20,7 +20,7 @@
       </div>
       <div class="flex flex-col gap-4">
         <div
-          class="w-full bg-slate-700 h-16 grid grid-cols-4 items-center justify-center rounded-3xl px-5 text-center"
+          class="w-full bg-slate-700 sm:h-16 grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-0 items-center justify-center rounded-3xl py-5 sm:py-0 px-5 text-center"
           v-for="item in invoices.value"
           :key="item"
         >

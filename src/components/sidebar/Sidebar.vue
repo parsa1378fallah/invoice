@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-20 h-screen fixed top-0 right-0 bg-slate-800 rounded-l-2xl z-10"
+    class="w-14 sm:w-20 h-screen fixed top-0 right-0 bg-slate-800 rounded-l-2xl z-10"
   >
     <div class="w-full h-full bg-slate-900 z-30">
       <div
@@ -13,7 +13,7 @@
 
     <transition>
       <div
-        class="absolute w-96 h-full overflow-x-hidden top-0 right-full bg-slate-800 flex flex-col p-4 rounded-l-2xl no-scrollbar border-l border-lime-50"
+        class="absolute w-80vw sm:w-96 h-full overflow-x-hidden top-0 right-full bg-slate-800 flex flex-col p-4 rounded-l-2xl no-scrollbar border-l border-lime-50"
         v-if="drawer.value"
       >
         <h1 class="text-xl text-white">صورت حساب جدید</h1>

@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="container h-screen flex justify-center">
-      <div class="w-[45rem] flex flex-col p-10">
+      <div class="w-96 sm:w-[45rem] flex flex-col p-10">
         <div class="flex flex-row-reverse mb-4 text-white">
           <router-link to="/">بازگشت به صفحه اصلی</router-link>
         </div>
         <div
-          class="flex flex-row justify-between bg-slate-900 rounded-2xl py-4 px-8 mb-4"
+          class="flex flex-col sm:flex-row justify-between gap-3 sm:gap-0 bg-slate-900 rounded-2xl py-4 px-8 mb-4"
         >
           <div>
             <div
@@ -37,7 +37,7 @@
               </p>
             </div>
           </div>
-          <div class="flex flex-row gap-3 text-xs">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
             <Button
               class="px-4 py-2 bg-green-600 text-white"
               @click="drawer.open()"
@@ -66,7 +66,7 @@
             <p>{{ currentClient[0].billTo.clientName }}</p>
             <p>{{ currentClient[0].id }}</p>
           </div>
-          <div class="flex flex-row justify-between text-white">
+          <div class="flex flex-col sm:flex-row justify-between text-white">
             <p>تاریخ سفارش : {{ currentClient[0].billTo.invoiceDate }}</p>
             <p>تاریخ پرداخت : {{ currentClient[0].billTo.paymentDue }}</p>
           </div>
